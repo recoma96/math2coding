@@ -66,3 +66,5 @@ def f(n, k):
     return ans
 
 print(f(N, K))
+p_checker.stop()
+p_checker.print()
