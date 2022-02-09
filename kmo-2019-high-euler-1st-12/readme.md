@@ -44,6 +44,22 @@
 12
 ```
 
+## 힌트
+<details>
+<summary>힌트 1</summary>
+<ul>
+    <li>꽃잎들을 전부 뜯어서 한 줄에 나열해보고 하나씩 한방향으로 돌려보자</li>
+</ul>
+</details>
+
+<details>
+<summary>힌트 2</summary>
+<ul>
+    <li>똑같은 바람개비가 "연속"으로 중복되는 경우는 어느 경우일까?</li>
+</ul>
+</details>
+
+<br >
 
 ## 태그
 <details>

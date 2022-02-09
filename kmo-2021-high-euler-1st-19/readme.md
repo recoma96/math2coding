@@ -88,6 +88,23 @@ _**Note**_: 모듈러 처리가 아직 제대로 되어 있지 않아서 데이�
 |#8|100x100|2219|측정 불가|5714 ms / 78 MB|
 |#9|100x100|6572|측정 불가|103108 ms / 540 MB|
 
+## 힌트
+<details>
+<summary>힌트 1</summary>
+<ul>
+    <li>선수지식: 중복집합 순열, 위상정렬</li>
+</ul>
+</details>
+
+<details>
+<summary>힌트 2</summary>
+<ul>
+    <li>출발지 -> 물웅덩이 -> 집. 이 하나의 경로를 둘로 쪼개보자</li>
+</ul>
+</details>
+
+<br >
+
 ## 태그
 <details>
 <summary>Easy</summary>
