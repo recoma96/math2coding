@@ -40,9 +40,9 @@
 <summary>보기</summary>
 <ul>
     <li>정수론</li>
-    <li>에라토스테네스의 체</li>
     <li>조합론</li>
-    <li>애드혹</li>
+    <li>분할 정복을 이용한 거듭제곱</li>
+    <li>에라토스테네스의 체</li>
     <li>다이나믹 프로그래밍</li>
 </ul>
 </details>
