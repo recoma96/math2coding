@@ -26,6 +26,20 @@ def is_included(parent, child):
     else:
         return False
 
+def modular_div(a, b):
+    # 페르마의 소정리를 이용한 모듈러 나눗셈 연산(역원)
+    def __pow(r, n):
+        if n == 1:
+            return r
+        else:
+            v = __pow(r, n>>1)
+            if n%2==0:
+                return (v * v) % MODULA
+            else:
+                return (v * v * r) % MODULA
+    rev_b = __pow(b, MODULA-2)
+    return (a * rev_b) % MODULA
+
 def make_pool_tree(pools, N):
 
     # 위상 그래프 생성
@@ -53,12 +67,13 @@ def make_factorial(n):
     # 팩토리얼 DP를 만든다
     facts = [1] * (n+1)
     for i in range(1, n+1):
-        facts[i] = (facts[i-1] * i)
+        facts[i] = ((facts[i-1] * i) % MODULA)
     return facts
 
 def get_permutation(n, m, facts):
     # 팩토리얼 DP
-    return facts[n+m] // (facts[n] * facts[m])
+    return modular_div(facts[n+m], (facts[n] * facts[m]))
+    #return facts[n+m] // (facts[n] * facts[m])
 
 def calculate(                              \
     pools,                                  \
@@ -99,7 +114,7 @@ def calculate(                              \
         for ni in pool_child_graph[i]:
             nr, nc = pools[i].e.i - pools[ni].s.i, pools[ni].s.j - pools[i].e.j
             nv = get_permutation(nr, nc, facts)
-            home_case[i] -= (nv * home_case[ni])
+            home_case[i] = (home_case[i] - (nv * home_case[ni])) % MODULA
 
 
     # 뒤집어서 아파트 앞마당에서 해당 웅덩이 까지 다른 웅덩이를 거치지 않고 가는 경우 구하기
@@ -111,7 +126,7 @@ def calculate(                              \
         for ni in pool_parent_graph[i]:
             nr, nc = pools[ni].e.i - pools[i].s.i, pools[i].s.j - pools[ni].e.j
             nv = get_permutation(nr, nc, facts)
-            back_case[i] -= (nv * back_case[ni])
+            back_case[i] = (back_case[i] -  (nv * back_case[ni])) % MODULA
 
     return home_case, back_case
 
@@ -147,7 +162,7 @@ home_case, back_case = \
 
 ans = 0
 for i in range(1, N+1):
-    ans += (home_case[i] * back_case[i])
+    ans += (home_case[i] * back_case[i]) % MODULA
 print(ans % MODULA)
 
 p_checker.stop()

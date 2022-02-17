@@ -41,8 +41,20 @@ def get_pow(n):
     return pows[n]
     
 def modular_div(a, b):
+    # 페르마의 소정리를 이용한 모듈러 나눗셈
+    def __pow(r, n):
+        if n == 1:
+            return r
+        else:
+            v = __pow(r, n>>1)
+            if n%2==0:
+                return (v * v) % MODULA
+            else:
+                return (v * v * r) % MODULA
+        
     # 모듈러 나누기 연산
-    return int((((MODULA+1)/b) * a) % MODULA)
+    rev_b = __pow(b, MODULA-2)
+    return (a * rev_b) % MODULA
 
 def modular_sub(a, b):
     # 모듈러 뺄샘
