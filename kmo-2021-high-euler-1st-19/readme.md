@@ -88,7 +88,7 @@ _**Note**_: 페르마의 소정리를 도입했더니 더 걸림
 |#7|50x50|896|측정 불가|4074 ms / 26 MB|
 |#8|100x100|2219|측정 불가|25014 ms / 78 MB|
 
-## 힌트
+## 힌트 (Hard 기준)
 <details>
 <summary>힌트 1</summary>
 <ul>
@@ -98,6 +98,13 @@ _**Note**_: 페르마의 소정리를 도입했더니 더 걸림
 
 <details>
 <summary>힌트 2</summary>
+<ul>
+    <li>길 대신, 물웅덩이 위주로 발상을 전환해보자.</li>
+</ul>
+</details>
+
+<details>
+<summary>힌트 3</summary>
 <ul>
     <li>출발지 -> 물웅덩이 -> 집. 이 하나의 경로를 둘로 쪼개보자</li>
 </ul>
